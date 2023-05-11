@@ -7,10 +7,12 @@ public class TailSpawner : MonoBehaviour
 {
     private GameObject Clone;
     private Movement _movement;
+    private MeshRenderer _renderer;
     // Start is called before the first frame update
     void Start()
     {
         _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
+        _renderer = gameObject.GetComponent<MeshRenderer>();
         SpawnClone();
     }
 
@@ -49,6 +51,8 @@ public class TailSpawner : MonoBehaviour
         Clone = GameObject.CreatePrimitive(PrimitiveType.Cube);
         Clone.transform.position = gameObject.transform.position;
         Clone.GetComponent<BoxCollider>().isTrigger = true;
+        Clone.GetComponent<MeshRenderer>().material = _renderer.material;
+        Clone.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
     }
 
     private void OnCollisionEnter(Collision collision)
