@@ -47,4 +47,12 @@ public class Movement : MonoBehaviour
     {
         return Physics.Raycast(gameObject.transform.position, Vector3.down, DistFromGround);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Respawn")
+        {
+            IsDead = true;
+        }
+    }
 }
