@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -19,8 +20,12 @@ public class GameController : MonoBehaviour
     public GameObject Progression;
     public float ProgressionPos;
 
-    public TextMeshProUGUI Current;
-    public TextMeshProUGUI Best;
+    public TextMeshProUGUI[] Current;
+    public TextMeshProUGUI[] Best;
+
+    public GameObject StartPanel;
+    public GameObject DeathPanel;
+    public GameObject CompletedPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +38,20 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasCompleted && _movement.IsDead)
+        {
+            DeathPanel.SetActive(true);
+            Details.SetActive(false);
+            Progression.SetActive(false);
+        }
+
+        if (hasCompleted)
+        {
+            CompletedPanel.SetActive(true);
+            Details.SetActive(false);
+            Progression.SetActive(false);
+        }
+
         if (!hasCompleted && !_movement.IsDead)
         {
             FloatingProgress = Music.time / Music.clip.length * 100;
@@ -41,9 +60,10 @@ public class GameController : MonoBehaviour
 
         if (_movement.HasStarted)
         {
+            StartPanel.SetActive(false);
+
             var step = 400 * Time.deltaTime;
             Details.transform.localPosition = Vector2.MoveTowards(Details.transform.localPosition, new Vector2(DetailPos, Details.transform.localPosition.y), step);
-
             Progression.transform.localPosition = Vector2.MoveTowards(Progression.transform.localPosition, new Vector2(ProgressionPos, Progression.transform.localPosition.y), step);
         }
 
@@ -68,7 +88,19 @@ public class GameController : MonoBehaviour
             Progress = 100;
         }
 
-        Current.text = Progress.ToString() + "%";
-        Best.text = HighScore.ToString() + "%";
+        foreach (TextMeshProUGUI i in Current)
+        {
+            i.text = Progress.ToString() + "%";
+        }
+
+        foreach (TextMeshProUGUI j in Best)
+        {
+            j.text = HighScore.ToString() + "%";
+        }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Track1");
     }
 }
