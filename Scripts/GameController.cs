@@ -103,4 +103,9 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(TrackName);
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
