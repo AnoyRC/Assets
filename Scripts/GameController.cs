@@ -101,6 +101,6 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Track1");
+        SceneManager.LoadScene(TrackName);
     }
 }

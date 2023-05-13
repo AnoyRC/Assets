@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6982482113168192125}
   - component: {fileID: 6982482113168192122}
   - component: {fileID: 6982482113168192123}
-  - component: {fileID: 6982482113168192120}
+  - component: {fileID: 4366073590476794934}
+  - component: {fileID: 5675860950490850989}
   m_Layer: 0
   m_Name: BgBeats
   m_TagString: Respawn
@@ -98,7 +99,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6982482113168192120
+--- !u!135 &4366073590476794934
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982482113168192121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.79
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &5675860950490850989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,14 +121,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6982482113168192121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1280a55ee463b469c02b9376b5aded, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d44ff91affb6b4dbe7edbdf638f779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  updateStep: 0.1
-  sampleDataLength: 1024
-  clipLoudness: 0
-  sizeFactor: 50
-  intensity: 70
-  minSize: 5
-  maxSize: 8
+  speed: 7
+  PosY: -4.809999
