@@ -3339,8 +3339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 137.5, y: -125.2}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 173.7638, y: -125.2}
+  m_SizeDelta: {x: 272.5276, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413902275
 MonoBehaviour:
@@ -4946,8 +4946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 137.5, y: -125.2}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 178.6716, y: -125.2}
+  m_SizeDelta: {x: 282.3432, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711491696
 MonoBehaviour:
@@ -15266,7 +15266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1381497893
 Transform:
   m_ObjectHideFlags: 0
@@ -16080,6 +16080,11 @@ MonoBehaviour:
   StartPanel: {fileID: 237691566}
   DeathPanel: {fileID: 1811578125}
   CompletedPanel: {fileID: 2134381306}
+  Skins:
+  - {fileID: 1381497892}
+  - {fileID: 462732774}
+  - {fileID: 383363923}
+  - {fileID: 722540532}
 --- !u!4 &1496377472
 Transform:
   m_ObjectHideFlags: 0

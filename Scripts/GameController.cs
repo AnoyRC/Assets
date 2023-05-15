@@ -27,12 +27,16 @@ public class GameController : MonoBehaviour
     public GameObject DeathPanel;
     public GameObject CompletedPanel;
 
+    public GameObject[] Skins;
+
     // Start is called before the first frame update
     void Start()
     {
         HighScore = PlayerPrefs.GetInt(TrackName,0);
         PlayerMovement =  GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
+        int SelectedSkin = PlayerPrefs.GetInt("Skin", 1);
+        Skins[SelectedSkin-1].SetActive(true);
     }
 
     // Update is called once per frame
