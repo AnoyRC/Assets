@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
 {
     public TextMeshProUGUI[] HighScores;
     public GameObject SkinMenu;
+    public GameObject Credits;
     bool toggle = false;
     // Start is called before the first frame update
     void Start()
@@ -35,5 +36,10 @@ public class MainMenuController : MonoBehaviour
     public void hasToggled()
     {
         toggle = !toggle;
+    }
+
+    public void CreditsToggle()
+    {
+        Credits.SetActive(!Credits.activeSelf);
     }
 }
