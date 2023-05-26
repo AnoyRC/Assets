@@ -132,43 +132,11 @@ public class ReneverseManager : MonoBehaviour
         if (CarName == "Snake" && !SkinStats.ContainsKey("Snake"))
         {
             //Asset Template ID
-            string assetTemplateId = "fab7b93f-239a-4651-a119-165d10df38ca";
-
-            //Color Attribute
-            AssetsResponse.AssetsData.Asset.AssetMetadata.AssetAttribute Color = new()
-            {
-                TraitType = "Color",
-                Value = "Green"
-            };
-
-            //Type Attribute
-            AssetsResponse.AssetsData.Asset.AssetMetadata.AssetAttribute Type = new()
-            {
-                TraitType = "Type",
-                Value = "Creature"
-            };
-
-            // Adding Toyoyo's Metadata
-            var assetMetadata = new AssetsResponse.AssetsData.Asset.AssetMetadata()
-            {
-                Name = "Snake",
-                Description = "A snake skin might be enough to crawl you out to the next level",
-                Image = "https://files.reneverse.io/asset_template/metadata-images/fab7b93f-239a-4651-a119-165d10df38ca/92f655b2-0fb1-41c2-b137-261db6199b6b/SnakeRender.png",
-                AnimationUrl = null,
-                Attributes = new List<AssetsResponse.AssetsData.Asset.AssetMetadata.AssetAttribute>()
-                {
-                    Color,
-                    Type
-                },
-            };
-
-
-            //Testnet Booleon
-            bool isTestnet = true;
+            string assetTemplateId = "c8541897-3229-4fc6-bbcf-d723be00e315";
 
             try
             {
-                var Response = await ReneAPI.Game().AssetMint(assetTemplateId, assetMetadata, isTestnet);
+                var Response = await ReneAPI.Game().AssetMint(assetTemplateId);
                 Debug.Log(Response);
                 SkinStats["Snake"] = true;
                 NotificationManager.Notify("Asset Minting in progress");
@@ -185,42 +153,11 @@ public class ReneverseManager : MonoBehaviour
         {
 
             //Asset Template ID
-            string assetTemplateId = "fab7b93f-239a-4651-a119-165d10df38ca";
-
-            //Color Attribute
-            AssetsResponse.AssetsData.Asset.AssetMetadata.AssetAttribute Color = new()
-            {
-                TraitType = "Color",
-                Value = "Yellow"
-            };
-
-            //Type Attribute
-            AssetsResponse.AssetsData.Asset.AssetMetadata.AssetAttribute Type = new()
-            {
-                TraitType = "Type",
-                Value = "Machine"
-            };
-
-            // Adding Tristar's Metadata
-            var assetMetadata = new AssetsResponse.AssetsData.Asset.AssetMetadata()
-            {
-                Name = "Robot",
-                Description = "This Robot skin is playbable in both the games",
-                Image = "https://files.reneverse.io/asset_template/metadata-images/fab7b93f-239a-4651-a119-165d10df38ca/b0b4fc7d-dfae-40b2-9aad-a63859197437/RobotRender.png",
-                AnimationUrl = null,
-                Attributes = new List<AssetsResponse.AssetsData.Asset.AssetMetadata.AssetAttribute>()
-                {
-                    Color,
-                    Type
-                },
-            };
-
-            //Testnet Booleon
-            bool isTestnet = true;
+            string assetTemplateId = "297d1d85-0c8c-4d4b-af92-5c231e56ae59";
 
             try
             {
-                var Response = await ReneAPI.Game().AssetMint(assetTemplateId, assetMetadata, isTestnet);
+                var Response = await ReneAPI.Game().AssetMint(assetTemplateId);
                 Debug.Log(Response);
                 SkinStats["Robot"] = true;
                 NotificationManager.Notify("Asset Minting in progress");

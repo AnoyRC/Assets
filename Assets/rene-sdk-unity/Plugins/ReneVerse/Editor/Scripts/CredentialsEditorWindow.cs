@@ -12,7 +12,7 @@ namespace ReneVerse.Editor
 
         #region consts
 
-        private const string DocsURL = "https://app.gitbook.com/o/dHH87DKSlLTkofDkZ0K9/s/2R0efebFfiw8qumiNT9v/reneverse-tour/what-is-reneverse";
+        private const string DocsURL = "https://docs.reneverse.io";
         private const string TabName = "Reneverse Settings";
         private const string LogoSprite = "ReneLogo";
         private const string InstructionText = "Enter all necessary information below to get connected to ReneVerse.";
